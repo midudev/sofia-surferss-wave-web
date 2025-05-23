@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets"
+import HeroImage from "@/assets/sofia-surferrs-hero.png"
+---
+
 <section class="min-h-screen bg-hero-gradient text-white relative">
   <div
     class="flex flex-col md:flex-row items-center h-screen w-full max-w-7xl mx-auto px-6 lg:px-8"
@@ -6,13 +11,14 @@
     <div
       class="flex-1 flex justify-center items-center md:mb-0 mb-8 pt-24 md:pt-0"
     >
-      <img
-        src="/sofia-surferrs-hero.png"
+      <Image
+        src={HeroImage}
         alt="Sofía con tabla de surf en la playa"
         class="w-full max-w-md rounded-3xl"
-        width="500"
-        height="650"
+        width={500}
+        height={650}
         loading="eager"
+        format="webp"
       />
     </div>
 
