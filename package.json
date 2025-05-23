@@ -11,6 +11,7 @@
   "dependencies": {
     "@fontsource/bebas-neue": "5.2.5",
     "@tailwindcss/vite": "4.1.7",
+    "@vercel/analytics": "1.5.0",
     "astro": "5.8.0",
     "tailwindcss": "4.1.7"
   }

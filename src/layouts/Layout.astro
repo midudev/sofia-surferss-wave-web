@@ -1,4 +1,5 @@
 ---
+import Analytics from "@vercel/analytics/astro"
 import "@fontsource/bebas-neue"
 
 import "@/styles/global.css"
@@ -50,5 +51,6 @@ const {
   </head>
   <body class="text-gray-800 min-h-screen pb-24">
     <slot />
+    <Analytics />
   </body>
 </html>
