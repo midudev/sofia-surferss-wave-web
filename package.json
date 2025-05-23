@@ -14,5 +14,8 @@
     "@vercel/analytics": "1.5.0",
     "astro": "5.8.0",
     "tailwindcss": "4.1.7"
+  },
+  "devDependencies": {
+    "sharp": "0.34.2"
   }
 }
