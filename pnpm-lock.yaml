@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@fontsource/bebas-neue':
-        specifier: ^5.2.5
+        specifier: 5.2.5
         version: 5.2.5
       '@tailwindcss/vite':
         specifier: 4.1.7
