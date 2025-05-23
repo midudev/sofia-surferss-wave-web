@@ -22,7 +22,6 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
 
     <!-- Metadatos SEO básicos -->
     <title>{title}</title>
@@ -48,16 +47,8 @@ const {
 
     <!-- Canonical URL -->
     <link rel="canonical" href={Astro.url} />
-
-    <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
-  <body class="text-gray-800 font-mont min-h-screen">
+  <body class="text-gray-800 min-h-screen pb-24">
     <slot />
   </body>
 </html>
