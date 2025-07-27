@@ -1,0 +1,24 @@
+# Build output
+dist/
+.astro/
+
+# Node modules
+node_modules/
+
+# Dependencies
+pnpm-lock.yaml
+package-lock.json
+
+# Environment files
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# Cache directories
+.cache/
+
+# Vercel
+.vercel/ 
