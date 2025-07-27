@@ -1,0 +1,35 @@
+# Build output
+dist/
+.astro/
+
+# Node modules
+node_modules/
+
+# Dependencies
+pnpm-lock.yaml
+package-lock.json
+
+# Environment files
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Cache directories
+.cache/
+
+# Vercel
+.vercel/
+
+# Temporarily ignore these file types if needed
+# *.md
+# *.json 
