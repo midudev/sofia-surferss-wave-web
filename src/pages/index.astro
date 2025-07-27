@@ -1,31 +1,31 @@
 ---
-import Layout from "@/layouts/Layout.astro"
-import Navbar from "@/components/Navbar.astro"
-import Hero from "@/components/Hero.astro"
+import Layout from '@/layouts/Layout.astro'
+import Navbar from '@/components/Navbar.astro'
+import Hero from '@/components/Hero.astro'
 
 // Mejora SEO con metadatos estructurados
 const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "Event",
-  name: "Surferss Wave - Experiencia exclusiva de Surf",
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: 'Surferss Wave - Experiencia exclusiva de Surf',
   description:
-    "Un viaje exclusivo con Sofía y sus amigos que combina surf, diversión, playa, fiestas, DJs, y muchas actividades más.",
-  image: "/sofia-surferrs-hero.png",
+    'Un viaje exclusivo con Sofía y sus amigos que combina surf, diversión, playa, fiestas, DJs, y muchas actividades más.',
+  image: '/sofia-surferrs-hero.png',
   offers: {
-    "@type": "Offer",
-    availability: "https://schema.org/LimitedAvailability",
-    price: "0",
-    priceCurrency: "EUR",
-    validFrom: "2025-06-01",
-    url: "https://surferswave.com/#inscripcion",
+    '@type': 'Offer',
+    availability: 'https://schema.org/LimitedAvailability',
+    price: '0',
+    priceCurrency: 'EUR',
+    validFrom: '2025-06-01',
+    url: 'https://surferswave.com/#inscripcion',
   },
   organizer: {
-    "@type": "Organization",
-    name: "Surferss Wave",
-    url: "https://surferswave.com",
+    '@type': 'Organization',
+    name: 'Surferss Wave',
+    url: 'https://surferswave.com',
   },
-  eventStatus: "https://schema.org/EventScheduled",
-  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
 }
 ---
 
