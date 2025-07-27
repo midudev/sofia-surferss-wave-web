@@ -1,8 +1,8 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --font-bebas: 'Bebas Neue', sans-serif;
 
   --color-primary: #79c7ad;
-  --color-secondary: #9333ea;  
+  --color-secondary: #9333ea;
 }
