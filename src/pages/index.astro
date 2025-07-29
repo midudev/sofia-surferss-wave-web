@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro"
 import Navbar from "@/components/Navbar.astro"
 import Hero from "@/components/Hero.astro"
+import How from "@/components/How.astro"
 
 // Mejora SEO con metadatos estructurados
 const structuredData = {
@@ -42,23 +43,14 @@ const structuredData = {
       id="donde-es" 
       class="min-h-screen py-24 px-6 md:px-8 bg-white">
     </section>
-    <section 
-      id="como-ir" 
-      class="min-h-screen py-24 px-6 md:px-8 bg-gray-50">
+    <section id="como-ir" class="min-h-screen lg:py-24 px-6 md:px-8 bg-[url('../assets/section-how-bg.webp')] bg-cover md:flex relative lg:items-center justify-start">
+      <How />
     </section>
-    <section 
-      id="que-incluye" 
-      class="min-h-screen py-24 px-6 md:px-8 bg-white">
+    <section id="que-incluye" class="min-h-screen py-24 px-6 md:px-8 bg-white">
     </section>
-    <section
-      id="actividades"
-      class="min-h-screen py-24 px-6 md:px-8 bg-gray-50"
-    >
+    <section id="actividades" class="min-h-screen py-24 px-6 md:px-8 bg-gray-50">
     </section>
-    <section
-      id="inscripcion"
-      class="min-h-screen py-24 px-6 md:px-8 bg-hero-gradient text-white"
-    >
+    <section id="inscripcion" class="min-h-screen py-24 px-6 md:px-8 bg-hero-gradient text-white">
     </section> 
   </main>
 </Layout>
