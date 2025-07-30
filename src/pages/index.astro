@@ -4,6 +4,9 @@ import Navbar from '@/components/Navbar.astro'
 import Hero from '@/components/Hero.astro'
 import How from '@/components/How.astro'
 import WhatIncludes from '@/components/WhatIncludes.astro'
+
+// If is production, then the hide sections
+const isProduction = import.meta.env.PROD
 ---
 
 <Layout
@@ -15,21 +18,31 @@ import WhatIncludes from '@/components/WhatIncludes.astro'
     <Hero />
 
     <!-- Secciones con placeholders que se implementarán después -->
-    <section id="donde-es" class="min-h-screen py-24 px-6 md:px-8"></section>
+    {
+      !isProduction && (
+        <section id="donde-es" class="min-h-screen py-24 px-6 md:px-8" />
+      )
+    }
 
-    <How />
-    <WhatIncludes />
+    {!isProduction && <How />}
+    {!isProduction && <WhatIncludes />}
 
-    <section
-      id="actividades"
-      class="min-h-screen py-24 px-6 md:px-8 bg-transparent"
-    >
-    </section>
+    {
+      !isProduction && (
+        <section
+          id="actividades"
+          class="min-h-screen py-24 px-6 md:px-8 bg-transparent"
+        />
+      )
+    }
 
-    <section
-      id="inscripcion"
-      class="min-h-screen py-24 px-6 md:px-8 bg-hero-gradient text-white"
-    >
-    </section>
+    {
+      !isProduction && (
+        <section
+          id="inscripcion"
+          class="min-h-screen py-24 px-6 md:px-8 bg-hero-gradient text-white"
+        />
+      )
+    }
   </main>
 </Layout>
