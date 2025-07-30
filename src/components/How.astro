@@ -3,41 +3,44 @@ import { Image } from 'astro:assets'
 import HowImage from '@/assets/sofia-surferss-snorkel.webp'
 ---
 
-<div class="md:flex w-full h-full md:items-center flex-col lg:flex-row">
-
+<section
+  id="como-ir"
+  class="min-h-screen lg:py-24 px-6 md:px-8 bg-[url('../assets/section-how-bg.webp')] bg-cover md:flex relative lg:items-center justify-start"
+>
+  <div class="md:flex w-full h-full md:items-center flex-col lg:flex-row">
     <div class="h-full md:w-full flex items-start justify-start flex-col">
-        
-        <Image
-            src={HowImage}
-            alt='Sofía con gafas de snorkel en la playa'
-            loading="eager"
-            width={150}
-            height={650}
-            format="webp"
-            class="lg:hidden w-[clamp(150px,30vw,200px)] rounded-[40px] border-5 md:border-6 border-white ml-auto mt-20 md:mt-40"    
-        />
+      <Image
+        src={HowImage}
+        alt="Sofía con gafas de snorkel en la playa"
+        loading="eager"
+        width={150}
+        height={650}
+        format="webp"
+        class="lg:hidden w-[clamp(150px,30vw,200px)] rounded-[40px] border-5 md:border-6 border-white ml-auto mt-20 md:mt-40"
+      />
 
-        <span class="font-bebas md:w-[483px] md:text-4xl text-2xl text-[#202C38] ">
-            ¿CÓMO PUEDO IR?
-        </span>
+      <span class="font-bebas md:w-[483px] md:text-4xl text-2xl text-[#202C38]">
+        ¿CÓMO PUEDO IR?
+      </span>
 
-        <span class="font-bebas md:w-[483px] md:text-5xl md:mr-5 text-3xl text-[#202C38] mt-10">
-            Un viaje exclusivo al que solo 
-            se podrá acceder a través 
-            de las marcas Embajadoras 
-            de Surferss Wave
-        </span>
+      <span
+        class="font-bebas md:w-[483px] md:text-5xl md:mr-5 text-3xl text-[#202C38] mt-10"
+      >
+        Un viaje exclusivo al que solo se podrá acceder a través de las marcas
+        Embajadoras de Surferss Wave
+      </span>
     </div>
 
     <!-- Imagen para desktop -->
 
     <Image
-        src={HowImage}
-        alt='Sofía con gafas de snorkel en la playa'
-        loading="eager"
-        width={500}
-        height={650}
-        format="webp"
-        class="hidden lg:block max-w-[500px] min-w-[150px] rounded-[70px] border-7 border-white ml-auto"    
+      src={HowImage}
+      alt="Sofía con gafas de snorkel en la playa"
+      loading="eager"
+      width={500}
+      height={650}
+      format="webp"
+      class="hidden lg:block max-w-[500px] min-w-[150px] rounded-[70px] border-7 border-white ml-auto"
     />
-</div>
+  </div>
+</section>
