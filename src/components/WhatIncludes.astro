@@ -1,0 +1,30 @@
+<div id="main-container" class=`flex items-end justify-center  w-full flex-col`>
+  <span class="font-bebas lg:text-4xl md:text-4xl text-2xl text-[#202C38]">
+    ¿que incluye?
+  </span>
+  <span
+    class="font-bebas lg:text-5xl md:mr-5 text-3xl md:text-5xl text-[#202C38] md:mt-15 mt-7 text-right"
+  >
+    alojamiento
+    <br />
+    desayunos, comidas y cenas
+    <br />
+    clases de surf
+    <br />
+    actividades
+  </span>
+  <span class="font-bebas md:text-4xl text-1xl md:mt-15 mt-7 text-[#202C38]">
+    *desplazamiento no incluido
+  </span>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const queIncluye = document.getElementById('que-incluye')
+
+      document.getElementById('main-container')!.style.height =
+        window.innerWidth <= 768
+          ? `${queIncluye?.offsetHeight! / 2}px`
+          : `${queIncluye?.offsetHeight!}px`
+    })
+  </script>
+</div>
