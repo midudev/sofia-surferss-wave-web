@@ -1,30 +1,35 @@
-<div id="main-container" class=`flex items-end justify-center  w-full flex-col`>
-  <span class="font-bebas lg:text-4xl md:text-4xl text-2xl text-[#202C38]">
-    ¿que incluye?
-  </span>
-  <span
-    class="font-bebas lg:text-5xl md:mr-5 text-3xl md:text-5xl text-[#202C38] md:mt-15 mt-7 text-right"
-  >
-    alojamiento
-    <br />
-    desayunos, comidas y cenas
-    <br />
-    clases de surf
-    <br />
-    actividades
-  </span>
-  <span class="font-bebas md:text-4xl text-1xl md:mt-15 mt-7 text-[#202C38]">
-    *desplazamiento no incluido
-  </span>
+<section
+  id="que-incluye"
+  class="min-h-screen lg:py-24 px-6 md:px-8 bg-white bg-[url('../assets/section-includes-bg.webp')] bg-no-repeat bg-right-top bg-cover lg:bg-top relative"
+>
+  <div class=`flex items-end justify-center  w-full flex-col`>
+    <span class="font-bebas lg:text-4xl md:text-4xl text-2xl text-[#202C38]">
+      ¿que incluye?
+    </span>
+    <span
+      class="font-bebas lg:text-5xl md:mr-5 text-3xl md:text-5xl text-[#202C38] md:mt-15 mt-7 text-right"
+    >
+      alojamiento
+      <br />
+      desayunos, comidas y cenas
+      <br />
+      clases de surf
+      <br />
+      actividades
+    </span>
+    <span class="font-bebas md:text-4xl text-1xl md:mt-15 mt-7 text-[#202C38]">
+      *desplazamiento no incluido
+    </span>
+  </div>
+</section>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const queIncluye = document.getElementById('que-incluye')
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const queIncluye = document.getElementById('que-incluye')
 
-      document.getElementById('main-container')!.style.height =
-        window.innerWidth <= 768
-          ? `${queIncluye?.offsetHeight! / 2}px`
-          : `${queIncluye?.offsetHeight!}px`
-    })
-  </script>
-</div>
+    document.getElementById('que-incluye')!.style.height =
+      window.innerWidth <= 768
+        ? `${queIncluye?.offsetHeight! / 2}px`
+        : `${queIncluye?.offsetHeight!}px`
+  })
+</script>
