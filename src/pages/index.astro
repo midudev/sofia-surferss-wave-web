@@ -18,11 +18,7 @@ const isProduction = import.meta.env.PROD
     <Hero />
 
     <!-- Secciones con placeholders que se implementarán después -->
-    {
-      !isProduction && (
-        <section id="donde-es" class="min-h-screen py-24 px-6 md:px-8" />
-      )
-    }
+    {!isProduction && <section id="donde-es" class="py-24 px-6 md:px-8" />}
 
     {!isProduction && <How />}
     {!isProduction && <WhatIncludes />}
