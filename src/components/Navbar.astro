@@ -1,20 +1,22 @@
 ---
 const navItems = [
-  { text: "DÓNDE ES", href: "#donde-es" },
-  { text: "CÓMO IR", href: "#como-ir" },
-  { text: "QUÉ INCLUYE", href: "#que-incluye" },
-  { text: "ACTIVIDADES", href: "#actividades" },
+  { text: 'DÓNDE ES', href: '#donde-es' },
+  { text: 'CÓMO IR', href: '#como-ir' },
+  { text: 'QUÉ INCLUYE', href: '#que-incluye' },
+  { text: 'ACTIVIDADES', href: '#actividades' },
 ]
 ---
 
-<nav class="relative top-0 left-0 right-0  font-bebas pt-10">
+<nav class="relative top-0 left-0 right-0 font-bebas pt-10">
   <div
     class="max-w-7xl mx-auto flex justify-around items-center px-6 lg:px-8 relative pt-12"
   >
     <!-- Enlaces del lado izquierdo. Añadir md:flex -->
-    <div class="md:flex hidden lg:block' items-center space-x-6 lg:space-x-8 z-10">
+    <div
+      class="md:flex hidden lg:block' items-center space-x-6 lg:space-x-8 z-10"
+    >
       {
-        navItems.slice(0, 2).map((item) => (
+        navItems.slice(0, 2).map(item => (
           <a
             href={item.href}
             class={`
@@ -45,9 +47,11 @@ const navItems = [
     </div>
 
     <!-- Enlaces del lado derecho. Añadir md:flex -->
-    <div class="md:flex hidden lg:block items-center space-x-6 lg:space-x-8 z-10">
+    <div
+      class="md:flex hidden lg:block items-center space-x-6 lg:space-x-8 z-10"
+    >
       {
-        navItems.slice(2).map((item) => (
+        navItems.slice(2).map(item => (
           <a
             href={item.href}
             class={`
@@ -88,7 +92,7 @@ const navItems = [
   >
     <div class="px-4 pt-4 pb-5 space-y-3 max-w-md mx-auto">
       {
-        navItems.map((item) => (
+        navItems.map(item => (
           <a
             href={item.href}
             class={`
@@ -105,18 +109,19 @@ const navItems = [
 
 <script>
   // Script para el menú móvil
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuButton = document.getElementById("mobile-menu-button")
-    const mobileMenu = document.getElementById("mobile-menu")
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('mobile-menu-button')
+    const mobileMenu = document.getElementById('mobile-menu')
 
     if (menuButton && mobileMenu) {
-      menuButton.addEventListener("click", (e) => {
+      menuButton.addEventListener('click', e => {
         e.stopPropagation()
-        mobileMenu.classList.toggle("hidden")
+        mobileMenu.classList.toggle('hidden')
       })
 
-      document.addEventListener('click', (e) => {
-        !mobileMenu.classList.contains('hidden') && mobileMenu.classList.toggle('hidden')
+      document.addEventListener('click', e => {
+        !mobileMenu.classList.contains('hidden') &&
+          mobileMenu.classList.toggle('hidden')
       })
     }
   })
@@ -153,23 +158,23 @@ const navItems = [
 
 <script>
   // Script para cambiar el estilo del navbar al hacer scroll
-  document.addEventListener("DOMContentLoaded", () => {
-    const navbar = document.querySelector("nav")
+  document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('nav')
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        navbar?.classList.add("navbar-scrolled")
+        navbar?.classList.add('navbar-scrolled')
       } else {
-        navbar?.classList.remove("navbar-scrolled")
+        navbar?.classList.remove('navbar-scrolled')
       }
     }
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener('scroll', handleScroll)
 
     // Añadir atributos custom para la animación secuencial
-    const navLinks = document.querySelectorAll("nav a")
+    const navLinks = document.querySelectorAll('nav a')
     navLinks.forEach((link, index) => {
       if (link instanceof HTMLElement) {
-        link.style.setProperty("--animation-order", index.toString())
+        link.style.setProperty('--animation-order', index.toString())
       }
     })
   })

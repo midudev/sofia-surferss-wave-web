@@ -1,45 +1,59 @@
 ---
 import { Image } from 'astro:assets'
-import HeroImage from '@/assets/sofia-surferrs-hero.png'
+import HeroImage from '@/assets/sofia-surferss-hero.png'
 ---
 
-<section class="min-h-screen bg-hero-gradient text-white relative">
+<section id="hero" class="min-h-screen relative overflow-x-hidden">
   <div
-    class="flex flex-col md:flex-row items-center h-screen w-full max-w-7xl mx-auto px-6 lg:px-8"
+    class="flex flex-col md:flex-row items-center w-full max-w-7xl mx-auto px-6 lg:px-8 pt-10"
   >
     <!-- Lado izquierdo - Imagen -->
-    <div
-      class="flex-1 flex justify-center items-center md:mb-0 mb-8 pt-24 md:pt-0"
-    >
+    <div class="flex-1 flex justify-center items-center relative mb-10 md:mb-0">
       <Image
         src={HeroImage}
         alt="Sofía con tabla de surf en la playa"
-        class="w-full max-w-md rounded-3xl"
+        class="w-full max-w-[16rem] md:max-w-md mt-10"
         width={500}
         height={650}
         loading="eager"
         format="webp"
       />
+
+      <!-- Logo redondo visible solo en mobile -->
+      <img
+        src="/logo-surferrss-wave.svg"
+        alt=""
+        role="presentation"
+        aria-hidden="true"
+        class="absolute -bottom-20 -right-5 w-[155px] h-[156px] md:hidden rotate-[40deg]"
+        width="196"
+        height="200"
+      />
     </div>
 
     <!-- Lado derecho - Contenido -->
     <div
-      class="flex-1 md:px-8 flex flex-col gap-8 md:items-start items-center justify-center text-center"
+      class="flex-1 md:px-8 flex flex-col gap-8 items-center justify-center text-center"
     >
+      <!-- Logo visible solo en desktop -->
       <img
         src="/logo-surferrss-wave.svg"
-        alt="Surferss Wave Logo"
-        class="w-48 mx-auto"
+        alt=""
+        role="presentation"
+        aria-hidden="true"
+        class="hidden md:block w-48 mx-auto"
         width="252"
         height="256"
       />
 
-      <div class="flex flex-col gap-4 md:text-left text-center">
+      <div class="flex flex-col gap-4 mt-20 md:mt-0">
         <h1
-          class="text-primary text-3xl md:text-4xl lg:text-5xl leading-tight font-bebas text-center"
+          class="text-primary text-2xl md:text-3xl lg:text-5xl leading-tight font-bebas text-center"
         >
-          VIVE UNA EXPERIENCIA ÚNICA.<br />VIAJA JUNTO A SOFÍA Y SUS AMIGOS.<br
-          />SURF, DIVERSIÓN, PLAYA, FIESTAS, DJS, ACTIVIDADES Y MUCHO MÁS
+          VIVE UNA EXPERIENCIA ÚNICA.<br />
+          VIAJA JUNTO A SOFÍA Y SUS AMIGOS.<br />
+          SURF, DIVERSIÓN, PLAYA, FIESTAS,<br />
+          DJS, ACTIVIDADES Y MUCHO MÁS
         </h1>
       </div>
     </div>
