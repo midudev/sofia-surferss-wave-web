@@ -2,13 +2,13 @@
 const { id, class: className } = Astro.props
 ---
 
-<section id={id} class={`${className} bg-cover -mb-40`}>
+<section id={id} class={`${className} bg-cover bg-center -mb-40`}>
   <div class="py-48 px-6 md:px-8 max-w-7xl mx-auto">
     <slot />
   </div>
 
   <div
-    class="px-6 md:px-8 bg-[url('../assets/separator.webp')] bg-no-repeat bg-cover bg-top relative h-[196px]"
+    class="bg-[url('../assets/separator.webp')] bg-center bg-cover relative h-[196px]"
   >
   </div>
 </section>
