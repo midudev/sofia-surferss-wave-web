@@ -1,34 +1,9 @@
 ---
-import Layout from "@/layouts/Layout.astro"
-import Navbar from "@/components/Navbar.astro"
-import Hero from "@/components/Hero.astro"
-import How from "@/components/How.astro"
+import Layout from '@/layouts/Layout.astro'
+import Navbar from '@/components/Navbar.astro'
+import Hero from '@/components/Hero.astro'
+import How from '@/components/How.astro'
 import WhatIncludes from '@/components/WhatIncludes.astro'
-
-// Mejora SEO con metadatos estructurados
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'Event',
-  name: 'Surferss Wave - Experiencia exclusiva de Surf',
-  description:
-    'Un viaje exclusivo con Sofía y sus amigos que combina surf, diversión, playa, fiestas, DJs, y muchas actividades más.',
-  image: '/sofia-surferrs-hero.png',
-  offers: {
-    '@type': 'Offer',
-    availability: 'https://schema.org/LimitedAvailability',
-    price: '0',
-    priceCurrency: 'EUR',
-    validFrom: '2025-06-01',
-    url: 'https://surferswave.com/#inscripcion',
-  },
-  organizer: {
-    '@type': 'Organization',
-    name: 'Surferss Wave',
-    url: 'https://surferswave.com',
-  },
-  eventStatus: 'https://schema.org/EventScheduled',
-  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-}
 ---
 
 <Layout
@@ -43,16 +18,13 @@ const structuredData = {
     <section id="donde-es" class="min-h-screen py-24 px-6 md:px-8 bg-white">
     </section>
 
-    <section id="como-ir" class="min-h-screen lg:py-24 px-6 md:px-8 bg-[url('../assets/section-how-bg.webp')] bg-cover md:flex relative lg:items-center justify-start">
-      <How />
-    </section>
+    <How />
+    <WhatIncludes />
 
-    <section id="que-incluye" class="min-h-screen lg:py-24 px-6 md:px-8 bg-white bg-[url('../assets/section-includes-bg.webp')] bg-no-repeat bg-right-top bg-cover lg:bg-top relative ">
-      <WhatIncludes />
-
-    </section>
-    
-    <section id="actividades" class="min-h-screen py-24 px-6 md:px-8 bg-gray-50">
+    <section
+      id="actividades"
+      class="min-h-screen py-24 px-6 md:px-8 bg-gray-50"
+    >
     </section>
 
     <section
@@ -62,24 +34,3 @@ const structuredData = {
     </section>
   </main>
 </Layout>
-
-<!-- Agregar metadatos estructurados para SEO -->
-<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-
-<!-- Script para el scroll suave -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault()
-        const target = document.querySelector(this.getAttribute('href'))
-        if (target) {
-          window.scrollTo({
-            top: target.offsetTop,
-            behavior: 'smooth',
-          })
-        }
-      })
-    })
-  })
-</script>
