@@ -1,5 +1,7 @@
 ---
 import Analytics from '@vercel/analytics/astro'
+import Footer from '@/components/Footer.astro'
+
 import '@fontsource/bebas-neue'
 
 import '@/styles/global.css'
@@ -15,6 +17,30 @@ const {
   description = 'Viaja junto a Sofía y sus amigos. Un viaje exclusivo con surf, diversión, playa, fiestas y mucho más. Solo disponible a través de marcas Embajadoras de Surferss Wave.',
   ogImage = 'https://www.surferswavetrip.com/og.jpg',
 } = Astro.props
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: 'Surferss Wave - Experiencia exclusiva de Surf',
+  description:
+    'Un viaje exclusivo con Sofía y sus amigos que combina surf, diversión, playa, fiestas, DJs, y muchas actividades más.',
+  image: '/sofia-surferrs-hero.png',
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/LimitedAvailability',
+    price: '0',
+    priceCurrency: 'EUR',
+    validFrom: '2025-06-01',
+    url: 'https://surferswave.com/#inscripcion',
+  },
+  organizer: {
+    '@type': 'Organization',
+    name: 'Surferss Wave',
+    url: 'https://surferswave.com',
+  },
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+}
 ---
 
 <!doctype html>
@@ -48,9 +74,16 @@ const {
 
     <!-- Canonical URL -->
     <link rel="canonical" href={Astro.url} />
+
+    <!-- Agregar metadatos estructurados para SEO -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
   </head>
   <body class="text-gray-800 min-h-screen pb-24">
     <slot />
     <Analytics />
+    <Footer />
   </body>
 </html>
