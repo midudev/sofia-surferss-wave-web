@@ -1,0 +1,34 @@
+---
+import Section from '@/components/Section.astro'
+---
+
+<Section
+  id="actividades"
+  class="bg-[url('../assets/section-activities-bg.webp')]"
+>
+  <div class="text-center text-white">
+    <h2
+      id="titulo-actividades"
+      class="font-bebas text-2xl md:text-3xl lg:text-4xl"
+    >
+      ¿QUÉ ACTIVIDADES VAMOS HACER?
+    </h2>
+
+    <div
+      class="mx-auto mt-64 flex flex-col font-bebas text-4xl text-[var(--color-secondary)] md:mt-64 md:flex-row md:justify-center md:items-start md:gap-x-32 md:text-4xl lg:text-5xl max-w-5xl"
+      aria-labelledby="titulo-actividades"
+    >
+      <ul class="space-y-2 text-center md:text-left md:w-max" role="list">
+        <li class="before:content-['·'] before:mr-1 before:inline-block">CLASES DE YOGA</li>
+        <li class="before:content-['·'] before:mr-1 before:inline-block">JUEGOS NOCTURNOS</li>
+        <li class="before:content-['·'] before:mr-1 before:inline-block">CLASES DE SURF</li>
+      </ul>
+
+      <ul class="space-y-2 text-center md:text-left md:w-max" role="list">
+        <li class="before:content-['·'] before:mr-1 before:inline-block">ACTIVACIONES DE MARCAS</li>
+        <li class="before:content-['·'] before:mr-1 before:inline-block">FIESTAS - DJ SET</li>
+        <li class="before:content-['·'] before:mr-1 before:inline-block">TALLER DE CERÁMICA</li>
+      </ul>
+    </div>
+  </div>
+</Section>
