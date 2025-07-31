@@ -1,5 +1,9 @@
 ---
-const { id, class: className } = Astro.props
+const { id, class: className, isBeforeFooter = false } = Astro.props
+
+const backgroundImage = isBeforeFooter
+  ? "bg-[url('../assets/footer-text.svg')]"
+  : "bg-[url('../assets/separator.webp')]"
 ---
 
 <section id={id} class={`${className} bg-cover bg-top -mb-40`}>
@@ -7,8 +11,5 @@ const { id, class: className } = Astro.props
     <slot />
   </div>
 
-  <div
-    class="bg-[url('../assets/separator.webp')] bg-center bg-cover relative h-[196px]"
-  >
-  </div>
+  <div class=`${backgroundImage} bg-center bg-cover relative h-[196px]`></div>
 </section>
