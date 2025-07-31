@@ -3,6 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import Navbar from '@/components/Navbar.astro'
 import Hero from '@/components/Hero.astro'
 import How from '@/components/How.astro'
+import Where from '@/components/Where.astro'
 import WhatIncludes from '@/components/WhatIncludes.astro'
 
 // If is production, then the hide sections
@@ -18,8 +19,7 @@ const isProduction = import.meta.env.PROD
     <Hero />
 
     <!-- Secciones con placeholders que se implementarán después -->
-    {!isProduction && <section id="donde-es" class="py-24 px-6 md:px-8" />}
-
+    {!isProduction && <Where />}
     {!isProduction && <How />}
     {!isProduction && <WhatIncludes />}
 

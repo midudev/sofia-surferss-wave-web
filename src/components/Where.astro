@@ -1,0 +1,70 @@
+---
+import { Image } from 'astro:assets'
+import WhereBg from '@/assets/section-where-bg.webp'
+import SurfersWave from '@/assets/surferss-wave.svg'
+---
+
+<section
+  id="donde-es"
+  aria-labelledby="donde-es-heading"
+  class="relative w-full overflow-hidden text-center items-center text-white mt-14"
+>
+  <!-- Versión MOBILE -->
+  <div class="block md:hidden relative h-[400px] overflow-visible">
+    <div class="relative w-full h-full scale-[1.4] origin-center transform">
+      <img
+        src={SurfersWave.src}
+        alt=""
+        role="presentation"
+        aria-hidden="true"
+        class="absolute top-5 right-2 w-full z-10 pointer-events-none scale-[1.5]"
+      />
+
+      <Image
+        src={WhereBg}
+        alt="Grupo de surfistas reunidxs sobre sus tablas en el mar"
+        class="w-full h-full object-cover mt-20"
+        loading="eager"
+      />
+    </div>
+  </div>
+
+  <!-- Versión DESKTOP -->
+  <div class="hidden md:block relative">
+    <img
+      src={SurfersWave.src}
+      alt=""
+      role="presentation"
+      aria-hidden="true"
+      class="absolute top-0 left-0 w-full z-10 mt-7"
+    />
+
+    <Image
+      src={WhereBg}
+      alt="Grupo de surfistas reunidxs sobre sus tablas en el mar"
+      class="w-full h-auto"
+      loading="eager"
+    />
+  </div>
+
+  <div
+    class="absolute inset-0 z-30 flex items-center justify-center font-bebas"
+  >
+    <h2
+      id="donde-es-heading"
+      class="text-xl md:text-2xl lg:text-4xl text-center mt-20 sm:mt-0"
+    >
+      ¿DÓNDE ES?
+    </h2>
+  </div>
+
+  <div
+    class="absolute bottom-10 sm:bottom-10 md:bottom-16 lg:bottom-48 left-0 right-0 flex justify-center font-bebas"
+  >
+    <p
+      class="text-3xl sm:text-4xl md:text-4xl lg:text-6xl tracking-wide text-center"
+    >
+      SOMO, CANTABRIA – LATAS SURF HOUSE
+    </p>
+  </div>
+</section>
