@@ -7,7 +7,7 @@ const navItems = [
 ]
 ---
 
-<nav class="relative top-0 left-0 right-0 font-bebas pt-10">
+<nav class="relative top-0 left-0 right-0 font-bebas">
   <div
     class="max-w-7xl mx-auto flex justify-around items-center px-6 lg:px-8 relative pt-12"
   >
@@ -20,8 +20,7 @@ const navItems = [
           <a
             href={item.href}
             class={`
-              text-xl font-bebas transition-all duration-300 py-2 px-4 text-[#79c7ad] hover:bg-[#79c7ad] hover:text-white
-              rounded-full 
+              text-xl font-bebas transition-all duration-300 py-1 px-4 pb-0.5 text-primary hover:bg-primary rounded-full hover:text-white
             `}
           >
             {item.text}
@@ -55,7 +54,7 @@ const navItems = [
           <a
             href={item.href}
             class={`
-              text-xl font-bebas transition-all duration-300 py-1 px-4 text-[#79c7ad] hover:bg-[#79c7ad] rounded-full hover:text-white
+              text-xl font-bebas transition-all duration-300 py-1 px-4 pb-0.5 text-primary hover:bg-primary rounded-full hover:text-white
             `}
           >
             {item.text}
