@@ -5,6 +5,7 @@ import Hero from '@/components/Hero.astro'
 import How from '@/components/How.astro'
 import Where from '@/components/Where.astro'
 import WhatIncludes from '@/components/WhatIncludes.astro'
+import Activities from '@/components/Activities.astro'
 
 // If is production, then the hide sections
 const isProduction = import.meta.env.PROD
@@ -22,15 +23,7 @@ const isProduction = import.meta.env.PROD
     {!isProduction && <Where />}
     {!isProduction && <How />}
     {!isProduction && <WhatIncludes />}
-
-    {
-      !isProduction && (
-        <section
-          id="actividades"
-          class="min-h-screen py-24 px-6 md:px-8 bg-transparent"
-        />
-      )
-    }
+    {!isProduction && <Activities />}
 
     {
       !isProduction && (
