@@ -6,8 +6,6 @@ import How from '@/components/How.astro'
 import Where from '@/components/Where.astro'
 import WhatIncludes from '@/components/WhatIncludes.astro'
 import Activities from '@/components/Activities.astro'
-
-const isProduction = import.meta.env.PROD
 ---
 
 <Layout
@@ -17,9 +15,9 @@ const isProduction = import.meta.env.PROD
   <main class="w-full">
     <Navbar />
     <Hero />
-    {!isProduction && <Where />}
-    {!isProduction && <How />}
-    {!isProduction && <WhatIncludes />}
-    {!isProduction && <Activities />}
+    <Where />
+    <How />
+    <WhatIncludes />
+    <Activities />
   </main>
 </Layout>
