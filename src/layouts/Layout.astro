@@ -25,6 +25,22 @@ const structuredData = {
   description:
     'Un viaje exclusivo con Sofía y sus amigos que combina surf, diversión, playa, fiestas, DJs, y muchas actividades más.',
   image: '/sofia-surferrs-hero.png',
+  startDate: '2025-06-01',
+  endDate: '2025-06-08',
+  location: {
+    '@type': 'Place',
+    name: 'Latas Surf House',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Somo',
+      addressRegion: 'Cantabria',
+      addressCountry: 'ES',
+    },
+  },
+  performer: {
+    '@type': 'Person',
+    name: 'Sofía Surferss',
+  },
   offers: {
     '@type': 'Offer',
     availability: 'https://schema.org/LimitedAvailability',
