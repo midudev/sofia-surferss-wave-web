@@ -1,6 +1,7 @@
 ---
 import Analytics from '@vercel/analytics/astro'
 import Footer from '@/components/Footer.astro'
+import BackToTop from '@/components/BackToTop.astro'
 
 import '@fontsource/bebas-neue'
 
@@ -100,6 +101,7 @@ const structuredData = {
   <body class="text-gray-800 min-h-screen pb-24">
     <slot />
     <Analytics />
+    <BackToTop />
     <Footer />
   </body>
 </html>
