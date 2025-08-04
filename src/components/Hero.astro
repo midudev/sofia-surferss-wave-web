@@ -28,6 +28,7 @@ import HeroImage from '@/assets/sofia-surferss-hero.png'
         class="absolute -bottom-20 -right-5 w-[155px] h-[156px] md:hidden rotate-[40deg]"
         width="196"
         height="200"
+        id="mobile-hero-logo"
       />
     </div>
 
@@ -59,3 +60,19 @@ import HeroImage from '@/assets/sofia-surferss-hero.png'
     </div>
   </div>
 </section>
+
+<style>
+  #mobile-hero-logo {
+    animation: spin infinite 30s linear;
+  }
+
+  @keyframes spin {
+    0% {
+      rotate: 0deg;
+    }
+
+    100% {
+      rotate: 360deg;
+    }
+  }
+</style>
