@@ -1,6 +1,7 @@
 ---
 import Analytics from '@vercel/analytics/astro'
 import Footer from '@/components/Footer.astro'
+import Navbar from '@/components/Navbar.astro'
 
 import '@fontsource/bebas-neue'
 
@@ -97,9 +98,12 @@ const structuredData = {
       set:html={JSON.stringify(structuredData)}
     />
   </head>
-  <body class="text-gray-800 min-h-screen pb-24">
-    <slot />
-    <Analytics />
+  <body>
+    <Navbar />
+    <main class="flex flex-col mx-auto w-full">
+      <slot />
+      <Analytics />
+    </main>
     <Footer />
   </body>
 </html>
