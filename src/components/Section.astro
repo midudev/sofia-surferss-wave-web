@@ -1,5 +1,10 @@
 ---
-const { id, class: className, isBeforeFooter = false } = Astro.props
+const {
+  id,
+  class: className,
+  isBeforeFooter = false,
+  isWhereSection = false,
+} = Astro.props
 
 const backgroundImage = isBeforeFooter
   ? "bg-[url('../assets/footer-text.svg')]"
@@ -7,9 +12,17 @@ const backgroundImage = isBeforeFooter
 ---
 
 <section id={id} class={`${className} bg-cover bg-top -mb-40`}>
+  {
+    isWhereSection && (
+      <div class="bg-[url('../assets/surferss-wave.svg')] bg-cover relative md:h-[196px] h-[160px] top-5 bg-center" />
+    )
+  }
   <div class="py-48 px-6 md:px-8 max-w-7xl mx-auto">
     <slot />
   </div>
 
-  <div class=`${backgroundImage} bg-center bg-cover relative h-[196px]`></div>
+  <div
+    class=`${backgroundImage} bg-center bg-cover relative h-[196px]`
+  >
+  </div>
 </section>

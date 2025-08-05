@@ -2,13 +2,29 @@
 import Section from '@/components/Section.astro'
 ---
 
-<Section id="donde-es" class="bg-[url('../assets/section-where-bg.webp')]">
+<Section
+  id="donde-es"
+  class="bg-[url('../assets/section-where-bg.webp')]"
+  isWhereSection
+>
   <div
-    class="flex justify-center w-full flex-col items-center text-white min-h-[500px] md:min-h-[600px] lg:min-h-[700px]"
+    class="relative flex justify-center w-full flex-col items-center text-white h-full min-h-[500px] md:min-h-[600px] lg:min-h-[748px]"
   >
-    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bebas">¿DÓNDE ES?</h2>
-    <p class="text-4xl md:text-5xl lg:text-6xl font-bebas">
+    <h2
+      id="title-centered"
+      class="text-3xl md:text-4xl lg:text-5xl font-bebas absolute left-1/2 -translate-x-1/2"
+    >
+      ¿DÓNDE ES?
+    </h2>
+    <p class="text-4xl md:text-5xl lg:text-6xl font-bebas absolute -bottom-40">
       SOMO, CANTABRIA - LATAS SURF HOUSE
     </p>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const titleCentered = document.getElementById('title-centered')!
+      titleCentered.style.top = `${titleCentered.parentElement!.offsetHeight / 2 - 40}px`
+    })
+  </script>
 </Section>
