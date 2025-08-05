@@ -7,21 +7,21 @@ const navItems = [
 ]
 ---
 
-<nav class="relative top-0 left-0 right-0 font-bebas">
+<nav
+  class="fixed top-0 left-0 right-0 z-50 font-bebas transition-all duration-300 border-b border-transparent pt-2"
+>
   <div
-    class="max-w-7xl mx-auto flex justify-around items-center px-6 lg:px-8 relative pt-12"
+    class="max-w-7xl mx-auto flex justify-around items-center py-10 md:py-8 lg:py-8 relative"
   >
-    <!-- Enlaces del lado izquierdo. Añadir md:flex -->
+    <!-- Enlaces del lado izquierdo -->
     <div
-      class="md:flex hidden lg:block' items-center space-x-6 lg:space-x-8 z-10"
+      class="md:flex hidden lg:block items-center gap-12 space-x-4 md:-space-x-8 lg:space-x-10 lg:ml-10 z-10"
     >
       {
         navItems.slice(0, 2).map(item => (
           <a
             href={item.href}
-            class={`
-              text-xl font-bebas transition-all duration-300 py-1 px-4 pb-0.5 text-primary hover:bg-primary rounded-full hover:text-white
-            `}
+            class="text-xl font-bebas transition-all duration-300 py-1 px-4 pb-0.5 text-primary hover:bg-primary rounded-full hover:text-white"
           >
             {item.text}
           </a>
@@ -37,7 +37,7 @@ const navItems = [
         <img
           src="/logo-header-surferss-wave.svg"
           alt="Surferss Wave Surf Camp 2025"
-          class="h-18 w-auto"
+          class="h-14 lg:h-18 w-auto object-contain"
           width="330"
           height="100"
           loading="eager"
@@ -45,17 +45,15 @@ const navItems = [
       </a>
     </div>
 
-    <!-- Enlaces del lado derecho. Añadir md:flex -->
+    <!-- Enlaces del lado derecho -->
     <div
-      class="md:flex hidden lg:block items-center space-x-6 lg:space-x-8 z-10"
+      class="md:flex hidden lg:block items-center space-x-4 md:-space-x-8 lg:space-x-10 space-x-reverse flex-row-reverse z-10"
     >
       {
         navItems.slice(2).map(item => (
           <a
             href={item.href}
-            class={`
-              text-xl font-bebas transition-all duration-300 py-1 px-4 pb-0.5 text-primary hover:bg-primary rounded-full hover:text-white
-            `}
+            class="text-xl font-bebas transition-all duration-300 py-1 px-4 pb-0.5 text-primary hover:bg-primary rounded-full hover:text-white"
           >
             {item.text}
           </a>
@@ -63,7 +61,7 @@ const navItems = [
       }
     </div>
 
-    <!-- Botón del menú móvil (ahora a la derecha del todo) -->
+    <!-- Botón menú móvil -->
     <button
       aria-label="Menú"
       class="md:hidden p-2 text-primary focus:outline-none z-20 absolute right-6"
@@ -94,9 +92,7 @@ const navItems = [
         navItems.map(item => (
           <a
             href={item.href}
-            class={`
-              block py-2 px-4 font-bebas tracking-wide text-lg text-center text-[#79c7ad] hover:text-white
-            `}
+            class="block py-2 px-4 font-bebas tracking-wide text-lg text-center text-primary hover:text-white"
           >
             {item.text}
           </a>
@@ -106,8 +102,28 @@ const navItems = [
   </div>
 </nav>
 
+<style>
+  /* Efecto de navbar al hacer scroll */
+  :global(.navbar-scrolled) {
+    background-color: white;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+    border-bottom: 0.5px solid var(--color-primary);
+  }
+
+  /* Efecto logo al hacer scroll */
+  :global(.navbar-scrolled .logo-container img) {
+    transform: scale(0.9);
+  }
+
+  /* Transición del logo */
+  nav a img {
+    transition: transform 0.3s ease;
+  }
+</style>
+
 <script>
-  // Script para el menú móvil
+  // Menú móvil
   document.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.getElementById('mobile-menu-button')
     const mobileMenu = document.getElementById('mobile-menu')
@@ -119,45 +135,13 @@ const navItems = [
       })
 
       document.addEventListener('click', e => {
-        !mobileMenu.classList.contains('hidden') &&
-          mobileMenu.classList.toggle('hidden')
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden')
+        }
       })
     }
-  })
-</script>
 
-<style>
-  /* Añadimos efecto de desplazamiento al navbar cuando se hace scroll */
-  :global(.navbar-scrolled) {
-    transform: translateY(0);
-    transition: all 0.3s ease;
-  }
-
-  /* Logo scaling effect on scroll */
-  :global(.navbar-scrolled .logo-container img) {
-    transform: scale(0.9);
-  }
-
-  /* Logo transition */
-  nav a img {
-    transition: transform 0.3s ease;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
-
-<script>
-  // Script para cambiar el estilo del navbar al hacer scroll
-  document.addEventListener('DOMContentLoaded', () => {
+    // Efecto de scroll en navbar
     const navbar = document.querySelector('nav')
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -168,13 +152,5 @@ const navItems = [
     }
 
     window.addEventListener('scroll', handleScroll)
-
-    // Añadir atributos custom para la animación secuencial
-    const navLinks = document.querySelectorAll('nav a')
-    navLinks.forEach((link, index) => {
-      if (link instanceof HTMLElement) {
-        link.style.setProperty('--animation-order', index.toString())
-      }
-    })
   })
 </script>
