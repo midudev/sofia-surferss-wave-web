@@ -20,7 +20,7 @@ import Section from '@/components/Section.astro'
       SOMO, CANTABRIA - LATAS SURF HOUSE
     </p>
 
-    <div class="flex gap-1 items-center absolute md:-bottom-10 justify-center -bottom-55 backdrop-blur-sm lg:backdrop-blur-lg border-2 border-white/30 bg-white/30 p-2 rounded-full">
+    <div id="ubi-button" class="flex gap-1 items-center absolute md:-bottom-10 justify-center -bottom-55 backdrop-blur-sm lg:backdrop-blur-lg border-2 border-white/30 bg-white/30 p-2 rounded-full">
       <img src="/src/assets/map-icon.svg" class=" text-white text-xl" alt="">
       <a href="https://maps.app.goo.gl/mHVhmrviHiF2gwmi6" class="font-bold font-bebas md:text-xl">Ver en el mapa</a>
     </div>
@@ -32,4 +32,24 @@ import Section from '@/components/Section.astro'
       titleCentered.style.top = `${titleCentered.parentElement!.offsetHeight / 2 - 40}px`
     })
   </script>
+
+  <style>
+    #ubi-button {
+      animation: shadow-spin infinite 5s ease-in-out;
+    }
+
+    @keyframes shadow-spin {
+      0% {
+        box-shadow: 0px 0px 10px 0px #ffffff3a;
+      }
+      
+      50% {
+        box-shadow: 0px 0px 70px 70px #ffffff3a;
+      }
+
+      100% {
+        box-shadow: 0px 0px 10px 0px #ffffff3a;
+      }
+    }
+  </style>
 </Section>
