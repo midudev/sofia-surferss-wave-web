@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.surferswavetrip.com/sitemap.xml
+Sitemap: https://www.surferswavetrip.com/sitemap-index.xml
