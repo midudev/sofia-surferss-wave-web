@@ -5,6 +5,7 @@ import BackToTop from '@/components/BackToTop.astro'
 import Navbar from '@/components/Navbar.astro'
 
 import '@fontsource/bebas-neue'
+import bebasNeueWoff2 from '@fontsource/bebas-neue/files/bebas-neue-latin-400-normal.woff2?url'
 
 import '@/styles/global.css'
 
@@ -90,6 +91,15 @@ const structuredData = {
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage} />
 
+    <!-- Preload de fuentes -->
+    <link
+      rel="preload"
+      href={bebasNeueWoff2}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.surferswavetrip.com" />
 
@@ -98,6 +108,8 @@ const structuredData = {
       type="application/ld+json"
       set:html={JSON.stringify(structuredData)}
     />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body>
     <Navbar />
