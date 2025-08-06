@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@astrojs/sitemap':
-        specifier: ^3.4.2
+        specifier: 3.4.2
         version: 3.4.2
       '@fontsource/bebas-neue':
         specifier: 5.2.6
