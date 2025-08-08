@@ -6,45 +6,45 @@ import HowImage from '@/assets/sofia-surferss-snorkel.webp'
 
 <Section id="como-ir" class="bg-[url('../assets/section-how-bg.webp')]">
   <div
-    class="md:flex w-full md:items-center flex-col lg:flex-row min-h-[500px] md:min-h-[600px] lg:min-h-[748px]"
+    class="md:flex max-w-7xl md:items-center flex-col lg:flex-row min-h-[500px] md:min-h-[550px] lg:min-h-[620px] lg:mt-40 mb-10"
   >
-    <div class="justify-between flex items-start">
-      <div class="flex flex-col items-start justify-start">
-        <h2 class="font-bebas md:w-[483px] md:text-4xl text-2xl text-secondary">
+    <div
+      class="flex flex-col-reverse md:flex-row justify-between items-start w-full"
+    >
+      <div class="flex flex-col items-start justify-start lg:mt-20">
+        <h2 class="font-bebas md:text-4xl text-2xl text-secondary">
           ¿CÓMO PUEDO IR?
         </h2>
 
-        <p
-          class="font-bebas md:w-[483px] md:text-5xl md:mr-5 text-3xl text-secondary mt-10"
-        >
-          Un viaje exclusivo al que solo se podrá acceder a través de las marcas
-          Embajadoras de Surferss Wave
+        <p class="font-bebas md:text-5xl md:mr-5 text-3xl text-secondary mt-5">
+          UN VIAJE EXCLUSIVO AL QUE SOLO<br />
+          SE PODRÁ ACCEDER A TRAVÉS<br />
+          DE LAS MARCAS EMBAJADORAS<br />
+          DE SURFERSS WAVE
         </p>
       </div>
 
       <!-- Imagen para mobile -->
-
       <Image
         src={HowImage}
         alt="Sofía con gafas de snorkel en la playa"
         loading="eager"
-        width={150}
+        width={250}
+        height={750}
+        format="webp"
+        class="lg:hidden w-[clamp(170px,30vw,200px)] rounded-[30px] border-5 md:border-6 border-white ml-auto"
+      />
+
+      <!-- Imagen para desktop -->
+      <Image
+        src={HowImage}
+        alt="Sofía con gafas de snorkel en la playa"
+        loading="eager"
+        width={500}
         height={650}
         format="webp"
-        class="lg:hidden w-[clamp(150px,30vw,200px)] rounded-[40px] border-5 md:border-6 border-white"
+        class="hidden lg:block max-w-[480px] min-w-[150px] rounded-[70px] border-[12px] border-white self-start"
       />
     </div>
-
-    <!-- Imagen para desktop -->
-
-    <Image
-      src={HowImage}
-      alt="Sofía con gafas de snorkel en la playa"
-      loading="eager"
-      width={500}
-      height={650}
-      format="webp"
-      class="hidden lg:block max-w-[500px] min-w-[150px] rounded-[70px] border-7 border-white ml-auto"
-    />
   </div>
 </Section>
