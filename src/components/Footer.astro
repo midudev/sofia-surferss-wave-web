@@ -35,8 +35,13 @@ const networkData: INetworkData[] = [
     loading="eager"
     width={150}
     height={650}
-    class="m-20 w-64"
+    class="m-20 md:w-64"
   />
+
+  <div class="flex gap-3 p-5 font-bebas text-white text-xl border-3 bg-primary items-center justify-center rounded-xl mb-10">
+    <p>Web patrocinada por: </p>
+    <img src="/infojobs-banner.svg" alt="">
+  </div>
 
   <p class="mb-5 text-primary font-bebas md:text-xl">
     Copyright © 2025
@@ -45,7 +50,7 @@ const networkData: INetworkData[] = [
   <div class="flex mb-20 items-center justify-center gap-2">
     {
       networkData.map((rrss) => (
-        <a href={rrss.rrssURL} class="text-primary">
+        <a href={rrss.rrssURL} class="text-primary" target="_blank" rel="noopener noreferrer">
           <img src={rrss.rrssSVGPath} alt={rrss.rrssAlt} class="w-7">
         </a>
       ))
