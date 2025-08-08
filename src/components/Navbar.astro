@@ -149,32 +149,53 @@ const navItems = [
         iconHamburger.classList.toggle('hidden')
         iconClose.classList.toggle('hidden')
 
-        const expanded = mobileMenu.classList.contains('hidden') ? 'false' : 'true'
+        const expanded = mobileMenu.classList.contains('hidden')
+          ? 'false'
+          : 'true'
         menuButton.setAttribute('aria-expanded', expanded)
       })
 
       document.addEventListener('click', e => {
         const target = e.target as Node
-        const isClickInside = menuButton.contains(target) || mobileMenu.contains(target)
+        const isClickInside =
+          (menuButton?.contains(target) ?? false) ||
+          (mobileMenu?.contains(target) ?? false)
 
-        if (!mobileMenu.classList.contains('hidden') && !isClickInside) {
-          mobileMenu.classList.add('hidden')
-          iconHamburger.classList.remove('hidden')
-          iconClose.classList.add('hidden')
-          menuButton.setAttribute('aria-expanded', 'false')
+        if (!mobileMenu?.classList.contains('hidden') && !isClickInside) {
+          mobileMenu?.classList.add('hidden')
+          iconHamburger?.classList.remove('hidden')
+          iconClose?.classList.add('hidden')
+          menuButton?.setAttribute('aria-expanded', 'false')
         }
       })
-    }
 
-    const navbar = document.querySelector('nav')
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        navbar?.classList.add('navbar-scrolled')
-      } else {
-        navbar?.classList.remove('navbar-scrolled')
+      const navbar = document.querySelector('nav')
+      const handleScroll = () => {
+        if (window.scrollY > 50) {
+          navbar?.classList.add('navbar-scrolled')
+        } else {
+          navbar?.classList.remove('navbar-scrolled')
+        }
       }
-    }
 
-    window.addEventListener('scroll', handleScroll)
+      window.addEventListener('scroll', handleScroll)
+
+      const closeMenu = () => {
+        if (!mobileMenu || !menuButton || !iconHamburger || !iconClose) return
+        if (mobileMenu.classList.contains('hidden')) return
+        mobileMenu.classList.add('hidden')
+        iconHamburger.classList.remove('hidden')
+        iconClose.classList.add('hidden')
+        menuButton.setAttribute('aria-expanded', 'false')
+      }
+
+      if (mobileMenu) {
+        mobileMenu.querySelectorAll('a').forEach(a => {
+          a.addEventListener('click', closeMenu)
+        })
+      }
+
+      window.addEventListener('hashchange', closeMenu)
+    }
   })
 </script>
