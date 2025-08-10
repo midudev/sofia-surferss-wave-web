@@ -8,7 +8,7 @@ const navItems = [
 ---
 
 <nav
-  class="fixed top-0 left-0 right-0 z-50 font-bebas transition-all duration-300 border-b border-transparent pt-2"
+  class="fixed top-0 left-0 right-0 z-50 font-bebas transition-all duration-300 border-b border-transparent pt-2 bg-white"
 >
   <div
     class="max-w-7xl mx-auto flex justify-around items-center py-10 md:py-8 lg:py-8 relative"
@@ -63,28 +63,20 @@ const navItems = [
 
     <!-- Botón menú móvil -->
     <button
-      aria-label="Menú"
-      class="md:hidden p-2 text-primary focus:outline-none z-20 absolute right-6"
+      aria-label="Abrir menú de navegación"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      class="md:hidden p-2 text-primary focus:outline-none z-20 absolute right-6 w-9 group"
       id="mobile-menu-button"
     >
-      <svg
-        class="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
+        <div class="ease transform transition duration-300 group-[.open]:translate-y-1 group-[.open]:rotate-45 bg-primary h-[2px]"></div>
+        <div class="ease transform transition duration-300 group-[.open]:opacity-0 bg-primary h-[2px] mt-1"></div>
+        <div class="ease transform transition duration-300 group-[.open]:-translate-y-2 group-[.open]:-rotate-45 bg-primary h-[2px] mt-1"></div>  
     </button>
   </div>
 
-  <!-- Menú móvil -->
   <div
-    class="hidden md:hidden absolute top-full left-0 right-0 w-full bg-opacity-95 bg-white shadow-lg z-50 mt-10"
+    class="hidden md:hidden absolute top-full left-0 right-0 w-full bg-opacity-95 bg-white shadow-lg z-50"
     id="mobile-menu"
   >
     <div class="px-4 pt-4 pb-5 space-y-3 max-w-md mx-auto">
@@ -92,7 +84,7 @@ const navItems = [
         navItems.map(item => (
           <a
             href={item.href}
-            class="block py-2 px-4 font-bebas tracking-wide text-lg text-center text-primary hover:text-white"
+            class="block py-2 px-4 font-bebas tracking-wide text-lg text-center text-primary hover:text-secondary"
           >
             {item.text}
           </a>
@@ -103,7 +95,6 @@ const navItems = [
 </nav>
 
 <style>
-  /* Efecto de navbar al hacer scroll */
   :global(.navbar-scrolled) {
     background-color: white;
     transform: translateY(0);
@@ -111,19 +102,16 @@ const navItems = [
     border-bottom: 0.5px solid var(--color-primary);
   }
 
-  /* Efecto logo al hacer scroll */
   :global(.navbar-scrolled .logo-container img) {
     transform: scale(0.9);
   }
 
-  /* Transición del logo */
   nav a img {
     transition: transform 0.3s ease;
   }
 </style>
 
 <script>
-  // Menú móvil
   document.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.getElementById('mobile-menu-button')
     const mobileMenu = document.getElementById('mobile-menu')
@@ -131,17 +119,23 @@ const navItems = [
     if (menuButton && mobileMenu) {
       menuButton.addEventListener('click', e => {
         e.stopPropagation()
+        menuButton.classList.toggle('open')
         mobileMenu.classList.toggle('hidden')
+        const expanded = mobileMenu.classList.contains('hidden') ? 'false' : 'true'
+        menuButton.setAttribute('aria-expanded', expanded)
       })
 
       document.addEventListener('click', e => {
-        if (!mobileMenu.classList.contains('hidden')) {
+        const target = e.target as Node
+        const isClickInside = menuButton.contains(target) || mobileMenu.contains(target)
+
+        if (!mobileMenu.classList.contains('hidden') && !isClickInside) {
           mobileMenu.classList.add('hidden')
+          menuButton.setAttribute('aria-expanded', 'false')
         }
       })
     }
 
-    // Efecto de scroll en navbar
     const navbar = document.querySelector('nav')
     const handleScroll = () => {
       if (window.scrollY > 50) {

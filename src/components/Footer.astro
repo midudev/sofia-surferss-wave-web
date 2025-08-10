@@ -1,5 +1,33 @@
+---
+
+interface INetworkData {
+  rrssURL: string
+  rrssSVGPath: string
+  rrssAlt: string
+}
+
+const networkData: INetworkData[] = [
+  {
+    rrssURL: "https://www.instagram.com/sofia_surferss/",
+    rrssSVGPath: "/src/assets/instagram-logo.svg",
+    rrssAlt: "Instagram logo"
+  },
+  {
+    rrssURL: "https://www.tiktok.com/@sofiamoreno_",
+    rrssSVGPath: "/src/assets/tiktok-logo.svg",
+    rrssAlt: "Tiktok logo"
+  },
+  {
+    rrssURL: "https://www.youtube.com/@sofia_surferss",
+    rrssSVGPath: "/src/assets/youtube-logo.svg",
+    rrssAlt: "Youtube logo"
+  }
+]
+
+---
+
 <footer
-  class="pt-48 px-6 md:px-8 max-w-7xl mx-auto flex items-center justify-center"
+  class="pt-48 px-6 md:px-8 max-w-7xl mx-auto flex items-center justify-center flex-col"
 >
   <img
     src="/logo-surferrss-wave.svg"
@@ -9,4 +37,18 @@
     height={650}
     class="m-20 w-64"
   />
+
+  <p class="mb-5 text-primary font-bebas md:text-xl">
+    Copyright © 2025
+  </p>
+
+  <div class="flex mb-20 items-center justify-center gap-2">
+    {
+      networkData.map((rrss) => (
+        <a href={rrss.rrssURL} class="text-primary">
+          <img src={rrss.rrssSVGPath} alt={rrss.rrssAlt} class="w-7">
+        </a>
+      ))
+    }
+  </div>
 </footer>
