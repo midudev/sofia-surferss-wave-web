@@ -121,6 +121,7 @@ const navItems = [
         e.stopPropagation()
         menuButton.classList.toggle('open')
         mobileMenu.classList.toggle('hidden')
+
         const expanded = mobileMenu.classList.contains('hidden') ? 'false' : 'true'
         menuButton.setAttribute('aria-expanded', expanded)
       })
@@ -131,6 +132,7 @@ const navItems = [
 
         if (!mobileMenu.classList.contains('hidden') && !isClickInside) {
           mobileMenu.classList.add('hidden')
+
           menuButton.setAttribute('aria-expanded', 'false')
         }
       })
