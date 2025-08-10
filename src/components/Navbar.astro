@@ -66,36 +66,12 @@ const navItems = [
       aria-label="Abrir menú de navegación"
       aria-controls="mobile-menu"
       aria-expanded="false"
-      class="md:hidden p-2 text-primary focus:outline-none z-20 absolute right-6"
+      class="md:hidden p-2 text-primary focus:outline-none z-20 absolute right-6 w-9 group"
       id="mobile-menu-button"
     >
-      <svg
-        id="icon-hamburger"
-        class="w-6 h-6 cursor-pointer"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-
-      <svg
-        id="icon-close"
-        class="w-6 h-6 cursor-pointer hidden"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18L18 6M6 6l12 12"></path>
-      </svg>
+        <div class="ease transform transition duration-300 group-[.open]:translate-y-1 group-[.open]:rotate-45 bg-primary h-[2px]"></div>
+        <div class="ease transform transition duration-300 group-[.open]:opacity-0 bg-primary h-[2px] mt-1"></div>
+        <div class="ease transform transition duration-300 group-[.open]:-translate-y-2 group-[.open]:-rotate-45 bg-primary h-[2px] mt-1"></div>  
     </button>
   </div>
 
@@ -139,15 +115,12 @@ const navItems = [
   document.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.getElementById('mobile-menu-button')
     const mobileMenu = document.getElementById('mobile-menu')
-    const iconHamburger = document.getElementById('icon-hamburger')
-    const iconClose = document.getElementById('icon-close')
 
-    if (menuButton && mobileMenu && iconHamburger && iconClose) {
+    if (menuButton && mobileMenu) {
       menuButton.addEventListener('click', e => {
         e.stopPropagation()
+        menuButton.classList.toggle('open')
         mobileMenu.classList.toggle('hidden')
-        iconHamburger.classList.toggle('hidden')
-        iconClose.classList.toggle('hidden')
 
         const expanded = mobileMenu.classList.contains('hidden') ? 'false' : 'true'
         menuButton.setAttribute('aria-expanded', expanded)
@@ -159,8 +132,7 @@ const navItems = [
 
         if (!mobileMenu.classList.contains('hidden') && !isClickInside) {
           mobileMenu.classList.add('hidden')
-          iconHamburger.classList.remove('hidden')
-          iconClose.classList.add('hidden')
+
           menuButton.setAttribute('aria-expanded', 'false')
         }
       })
