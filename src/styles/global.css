@@ -10,3 +10,22 @@
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes footerWave {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 100%;
+  }
+}
+
+.footer-wave-bg {
+  animation: footerWave 8s linear infinite;
+}
+
+@media (max-width: 1024px) {
+  .footer-wave-bg {
+    animation-duration: 50s;
+  }
+}
