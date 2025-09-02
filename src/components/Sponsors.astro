@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import LogoInfoJobs from '@/assets/logo-infojobs.svg'
 import LogoCambiate from '@/assets/logo-cambiate.webp'
 import LogoDeeply from '@/assets/logo-deeply.webp'
 import LogoLatas from '@/assets/logo-latas.webp'
@@ -9,10 +10,16 @@ import LogoTian from '@/assets/logo-tian.webp'
 
 const sponsors = [
   {
+    logo: LogoInfoJobs,
+    name: 'InfoJobs',
+    alt: 'Logo de InfoJobs',
+    size: 'w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48',
+  },
+  {
     logo: LogoCambiate,
     name: 'Cámbiate',
     alt: 'Logo de Cámbiate',
-    size: 'w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56',
+    size: 'w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48',
   },
   {
     logo: LogoDeeply,
@@ -24,7 +31,7 @@ const sponsors = [
     logo: LogoLatas,
     name: 'Latas',
     alt: 'Logo de Latas',
-    size: 'w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32',
+    size: 'w-32 h-32 md:w-28 md:h-28 lg:w-36 lg:h-36',
   },
   {
     logo: LogoPrimark,
@@ -47,7 +54,7 @@ const sponsors = [
 ]
 ---
 
-<section class="py-12 bg-gradient-to-b from-transparent to-blue-50/30">
+<section class="py-12">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="text-center mb-8">
       <h2 class="text-2xl md:text-3xl font-bebas text-primary mb-2">
@@ -55,25 +62,28 @@ const sponsors = [
       </h2>
     </div>
 
-    <div
-      class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 lg:gap-4 items-center justify-items-center"
-    >
-      {
-        sponsors.map(sponsor => (
-          <div class="group hover:scale-110 transition-transform duration-300 ease-in-out">
-            <Image
-              src={sponsor.logo}
-              alt={sponsor.alt}
-              class={`max-w-full max-h-full object-contain filter transition-transform duration-300 ${sponsor.size}`}
-              width={640}
-              height={640}
-              quality={95}
-              format="webp"
-              loading="lazy"
-            />
-          </div>
-        ))
-      }
+    <div class="flex flex-col gap-8">
+      <div
+        id="sponsors"
+        class="grid grid-cols-4 gap-12 max-w-4xl mx-auto items-center justify-center w-full mx-auto"
+      >
+        {
+          sponsors.map(sponsor => (
+            <div class="flex justify-center items-center group hover:scale-110 transition-transform duration-300 ease-in-out">
+              <Image
+                src={sponsor.logo}
+                alt={sponsor.alt}
+                class={`max-w-full max-h-full object-contain filter transition-transform duration-300 ${sponsor.size}`}
+                width={640}
+                height={640}
+                quality={95}
+                format="webp"
+                loading="lazy"
+              />
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>
@@ -81,5 +91,9 @@ const sponsors = [
 <style>
   .group:hover .bg-white {
     transform: translateY(-2px);
+  }
+
+  #sponsors {
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
   }
 </style>
