@@ -1,0 +1,88 @@
+---
+import { Image } from 'astro:assets'
+import LogoCambiate from '@/assets/logo-cambiate.webp'
+import LogoDeeply from '@/assets/logo-deeply.webp'
+import LogoLatas from '@/assets/logo-latas.webp'
+import LogoPrimark from '@/assets/logo-primark.webp'
+import LogoSnatts from '@/assets/logo-snatts.webp'
+import LogoTian from '@/assets/logo-tian.webp'
+
+const sponsors = [
+  {
+    logo: LogoCambiate,
+    name: 'Cámbiate',
+    alt: 'Logo de Cámbiate',
+    size: 'w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56',
+  },
+  {
+    logo: LogoDeeply,
+    name: 'Deeply',
+    alt: 'Logo de Deeply',
+    size: 'w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48',
+  },
+  {
+    logo: LogoLatas,
+    name: 'Latas',
+    alt: 'Logo de Latas',
+    size: 'w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32',
+  },
+  {
+    logo: LogoPrimark,
+    name: 'Primark',
+    alt: 'Logo de Primark',
+    size: 'w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48',
+  },
+  {
+    logo: LogoSnatts,
+    name: 'Snatts',
+    alt: 'Logo de Snatts',
+    size: 'w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48',
+  },
+  {
+    logo: LogoTian,
+    name: 'Tian',
+    alt: 'Logo de Tian',
+    size: 'w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48',
+  },
+]
+---
+
+<section class="py-12 bg-gradient-to-b from-transparent to-blue-50/30">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-8">
+      <h2 class="text-2xl md:text-3xl font-bebas text-primary mb-2">
+        NUESTROS PATROCINADORES
+      </h2>
+      <p class="text-gray-600 text-sm md:text-base">
+        Marcas que hacen posible esta experiencia única
+      </p>
+    </div>
+
+    <div
+      class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 lg:gap-4 items-center justify-items-center"
+    >
+      {
+        sponsors.map(sponsor => (
+          <div class="group hover:scale-110 transition-transform duration-300 ease-in-out">
+            <Image
+              src={sponsor.logo}
+              alt={sponsor.alt}
+              class={`max-w-full max-h-full object-contain filter transition-transform duration-300 ${sponsor.size}`}
+              width={320}
+              height={320}
+              quality={95}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .group:hover .bg-white {
+    transform: translateY(-2px);
+  }
+</style>
